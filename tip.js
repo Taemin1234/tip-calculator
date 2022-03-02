@@ -1,5 +1,3 @@
-//버튼을 눌러 계산하고 리셋으로 초기화 후 custom을 누르면 입력창이 나타나지 않는 현상
-
 
 // 모든 버튼을 누르면 클릭 효과가 지워지고 reset 버튼의 효과도 지워짐
 $('.select').on('click', function() {
@@ -16,6 +14,8 @@ $('.select').on('click', function() {
 });
 
 
+
+// 각 
 $('.select').eq(0).on('click', function() {
     $('.select').eq(0).addClass('select-click')
     $('.tip-result').text('$ ' + ($('.price').val() * 0.05 / $('.people').val()).toFixed(2))
@@ -58,16 +58,19 @@ $('.custom').on('click', function() {
 
 $('.custom-input').on('keypress', function(e){
 
+    //엔터키의 아스키코드
     if(e.keyCode == 13){
         $('.custom').removeClass('select-click')
         $('.reset').css('opacity', 1)
         $('.custom-input-click').hide()
 
+         //총합의 결과가 나오지 않아 각 값에 사람수로 나누고 더하는 방식을 사용
         $('.tip-result').text('$ ' + ($('.price').val() * $('.custom-input').val()*0.01 / $('.people').val()).toFixed(2))
         $('.price-result').text('$ ' + (($('.price').val() / $('.people').val()) + ($('.price').val() * $('.custom-input').val()*0.01 / $('.people').val())).toFixed(2))
-        //총합의 결과가 나오지 않아 각 값에 사람수로 나누고 더하는 방식을 사용
+       
     }
 });
+
 
 $('.btn-custom').on('click', function(){
     $('.custom').removeClass('select-click')
