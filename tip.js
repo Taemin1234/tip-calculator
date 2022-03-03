@@ -15,7 +15,7 @@ $('.select').on('click', function() {
 
 
 
-// 각 
+// 팁 비율을 나타내는 버튼을 눌렀을 때 
 $('.select').eq(0).on('click', function() {
     $('.select').eq(0).addClass('select-click')
     $('.tip-result').text('$ ' + ($('.price').val() * 0.05 / $('.people').val()).toFixed(2))
@@ -55,6 +55,7 @@ $('.custom').on('click', function() {
 });
 
 
+// custom 버튼
 
 $('.custom-input').on('keypress', function(e){
 
